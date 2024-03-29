@@ -4,7 +4,7 @@ port: 9000
 
 image:
   repository: docker.io/kennethreitz/httpbin
-  tag: latest
+  tag: test
   imagePullPolicy: IfNotPresent
   containerPort: 80
 

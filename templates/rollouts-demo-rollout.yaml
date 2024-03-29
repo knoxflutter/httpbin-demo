@@ -20,8 +20,13 @@ spec:
           name: {{ .Release.Name }}
           ports:
             - containerPort: {{ .Values.image.containerPort }}
-  strategy:
-    blueGreen:
-      activeService: {{ .Release.Name }}-active
-      previewService: {{ .Release.Name }}-preview
-      autoPromotionEnabled: false
+  strategy:  #### 이 라인부터 수정내용입니다.
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 50
+      - pause: {duration: 60}
+      - setWeight: 100
