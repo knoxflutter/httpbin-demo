@@ -1,0 +1,12 @@
+## CAA수강생용, CTA수강생은 위의 value.yaml을 이용하세요
+replicas: 1
+port: 9000
+
+image:
+  repository: docker.io/kennethreitz/httpbin
+  tag: test
+  imagePullPolicy: IfNotPresent
+  containerPort: 80
+
+domain: caa-2024.click
+subdomain: 25479

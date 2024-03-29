@@ -1,0 +1,4 @@
+apiVersion: v2
+name: httpbin-demo-25479
+description: httpbin-demo chart for Kubernetes
+version: 0.1.0
